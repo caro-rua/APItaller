@@ -1,0 +1,25 @@
+input[type=search] {
+    width: 70%;
+    margin-bottom: 30px;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.paginator {
+    display:inline-block;
+    margin-bottom: 30px;
+
+}
+
+.page {
+    cursor: pointer;
+    display:inline;
+    padding: 10px;
+}
+
+.selected-page {
+    background: #dadada;
+}

@@ -1,0 +1,24 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <p>Please, search for your favorite character</p>
+  <p>Páginas: {{info.pages}}</p>
+  <p>Total: {{info.count}}</p>
+  <div class="container-pages">
+    <ul class="paginator">
+      <li *ngFor="let page of pages;let i = index" (click)="search($event, i)" [className]="'page ' + (i + 1 === currentPage? 'selected-page': '')">
+        {{i + 1}}
+      </li>
+    </ul>
+  </div>
+  <input type="search" [(ngModel)]="q" placeholder="Search..." (keyup)="search($event, 0)" >
+  <div class="main-container">
+    <div class="character-container" *ngFor="let character of characters">
+      <img [src]="character.image" [alt]="character.name">
+      <p>{{character.name}}</p>
+      <p>Status: {{character.status}}</p>
+      <p>Species: {{character.species}}</p>
+    </div>
+  </div> 
+</div>
